@@ -10,7 +10,11 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 8080;
 const dbString = process.env.MONGODB_CONNECTION;
 
-app.use(cors());
+const corsOptions = {
+    origin: '*'
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
