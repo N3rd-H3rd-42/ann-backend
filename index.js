@@ -8,7 +8,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8080;
-const dbString = process.env.MONGODB_CONNECTION || "mongodb+srv://sparky:nerd42herd@cluster0.vvmmu.mongodb.net/cluster0?retryWrites=true&w=majority";
+const dbString = process.env.MONGODB_CONNECTION;
 
 app.use(cors());
 
