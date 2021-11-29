@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const testController = require('../../controllers/testItem');
+const cors = require('cors');
 
 router.route('/test')
-    .post(testController.createOne)
-    .get(testController.findAll);
+    .post(cors(), testController.createOne)
+    .get(cors(), testController.findAll);
 
 module.exports = router;
