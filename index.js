@@ -8,13 +8,14 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8080;
+const dbString = process.env.MONGODB_CONNECTION || "mongodb+srv://sparky:nerd42herd@cluster0.vvmmu.mongodb.net/cluster0?retryWrites=true&w=majority";
 
 app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-mongoose.connect(process.env.MONGODB_CONNECTION, {}, () =>
+mongoose.connect(dbString, {}, () =>
   console.log("Database connected")
 );
 
